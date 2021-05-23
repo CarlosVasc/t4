@@ -47,27 +47,28 @@ op
 
 echo "npn_TAB"
 let V_CE=v(coll)-v(emit)
-echo "V_CE = $&V_CE"
+echo "VCE = $&V_CE"
 let V_BE=v(base)-v(emit)
-echo "V_BE = $&V_BE"
+echo "VBE = $&V_BE"
 if (V_CE>V_BE)
-echo "V_CE>V_BE hence operating in the F.A.R"
+echo "VCE greater than VBE = operating in F.A.R"
 else
-echo "V_CE>V_BE hence not operating in the F.A.R"
+echo "VCE greater than VBE = not in F.A.R"
 endif
 echo "npn_END"
 
-echo "pnp_TAB"
+echo "********************"
+echo "PNP_TAB"
 let V_EC=v(emit2)
-echo "V_CE = $&V_EC"
+echo "VCE = $&V_EC"
 let V_EB=v(emit2)-v(coll)
-echo "V_EB = $&V_EB"
+echo "VEB = $&V_EB"
 if (V_EC>V_EB)
-echo "V_EC>V_EB hence operating in the F.A.R"
+echo "VEC greater than VEB = operating in F.A.R"
 else
-echo "V_EC>V_EB hence not operating in the F.A.R"
+echo "VEC greater VEB = not in F.A.R"
 endif
-echo "pnp_END"
+echo "PNP_END"
 
 
 * time analysis
@@ -118,7 +119,7 @@ print bdwth
 
 * merit
 
-let cost = 1000 + 1 + 0.1 + 80 + 20 + 1 + 0.1 + 0.1 + 0.008 + 2 * 0.1
+let cost = 1102.4
 let gain = abs(v(out)[40]/v(in)[40])
 let merit = (gain * bdwth) / (cost * f1)
 
@@ -134,13 +135,13 @@ echo "****************************"
 
 * TABS
 
-
-echo "measurements_TAB"
 let Zin_re= Re(v(in2)[40]/i(Vin)[40])
 let Zin_im= Im(v(in2)[40]/i(Vin)[40])
+
+echo "measurements_TAB"
 echo "Zin = $&Zin_re + j $&Zin_im"
-echo "1st_Cutoff_Freq = $&f1"
-echo "2nd_CutoFF_Freq = $&f2"
+echo "1stCutoffFreq = $&f1"
+echo "2ndCutoffFreq = $&f2"
 echo "Vgain = $&gain"
 echo "Bandwidth = $&bdwth"
 echo "measurements_END"
