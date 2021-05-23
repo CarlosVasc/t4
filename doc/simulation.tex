@@ -76,4 +76,9 @@ The parameters aimed to optimize are in the following table once more.
     \end{tabular}
 \end{center}
 
+Understanding the purpose of the coupling capacitors on our circuit and confirming that understanding by "playing around" (changing their parameter values) on ngspice, it can be infered that the bandwith increases as the capacitance increases, since the lower cutoff frequency ($f_1$) decreases and the higher one ($f_2$) isn't affected. This increase will allow the transistors to keep operating at lower frequencies, since their impedance tends to infinity with $\omega$ approaching 0.
+
+Understanding the purpose of the bypass capacitor on our circuit and confirming that understanding by "playing around" (changing its parameter value) on ngspice, it can be infered that, as its capacitance increases, the first stage gain increases. That is because its impedance is $1/(jwC)$ ($w=2 \pi f$), and it is placed in paralel with a resistance ($R_E$), which varies inversely with the first stage gain. As such, with higher frequencies and capacitance, the impedance diminishes and, gradually, the capacitor starts to work as a short-circuit and to bypass the resistor $R_E$.
+
+Understanding the impact of the $R_C$ on our circuit and confirming that understanding by "playing around" (changing its parameter value) on ngspice, it can be infered that, as $R_C$ increases, the gain also increases, which can be greatly observed with a theorical analysis of the circuit asweel: $R_C$ and the gain of the circuit are proportional.
 
