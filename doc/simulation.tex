@@ -1,4 +1,79 @@
 \section{Simulation Analysis}
 \label{sec:simulation}
 
+In this section, the intent is to simulate the circuit, using \textit{Ngspice}. 
+
+Firstly, the operation point was obtained and the functioning of the NPN and PNP transistors in the F.A.R was assessed, being concluded in the following tables.
+
+\begin{center}
+    \begin{tabular}{|l|r|}
+      \hline    
+      {\bf Variable} & {\bf Value} \\ \hline
+      \input{npn_tab.tex}
+    \end{tabular}
+\end{center}
+
+And
+
+\begin{center}
+    \begin{tabular}{|l|r|}
+      \hline    
+      {\bf Variable} & {\bf Value} \\ \hline
+      \input{PNP_tab.tex}
+    \end{tabular}
+\end{center}
+
+Then, time and frequency analysis were performed in order to evaluate the collector (coll) and the output (out) voltage gain in the passband, the lower ($f_1$) and the upper ($f_2$) cutoff frequencies, the bandwith (difference between the cutoff frequencies) and the input (Zin) and output (Zout) impedances of the overall circuit. The following plots and tables represent such evaluations, along with the calculation of the cost and merit figure of the circuit.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{vo1.pdf}
+    \caption{Magnitude db plot for voltage in node coll/collector with time}
+    \label{vo1}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{vo1f.pdf}
+    \caption{Magnitude db plot for voltage in node coll/collector with frequency}
+    \label{vo1f}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{vo2f.pdf}
+    \caption{Magnitude db plot for voltage in node out/output with frequency}
+    \label{vo2f}
+\end{figure}
+
+\clearpage
+
+The tables are 
+
+\begin{center}
+    \begin{tabular}{|l|r|}
+      \hline    
+      {\bf Variable} & {\bf Value} \\ \hline
+      \input{measurements_tab.tex}
+    \end{tabular}
+\end{center}
+
+\begin{center}
+    \begin{tabular}{|l|r|}
+    \hline    
+    {\bf Variable} & {\bf Value} \\ \hline
+    \input{Zout_tab.tex}
+    \end{tabular}
+\end{center}
+
+The parameters aimed to optimize are in the following table once more.
+
+\begin{center}
+    \begin{tabular}{|l|r|}
+      \hline    
+      {\bf Variable} & {\bf Value} \\ \hline
+      \input{goals_tab.tex}
+    \end{tabular}
+\end{center}
+
 
